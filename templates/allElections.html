@@ -1,0 +1,39 @@
+{% extends "adminLayout.html" %}
+
+{% block body %}
+
+<br />
+  <table class="table table-bordered table-striped">
+    <thead class="text-center">
+      <tr>
+        <th colspan="7" class="bg-dark text-white">
+          All Elections
+        </th>
+      </tr>
+      <tr>
+        <th>Election Name </th>
+        <th colspan="4">Candidates</th>
+        <th>Winner</th>
+        <th>Closed</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for election in elections %}
+    <tr>
+      <td>{{ election.name }} </td>
+      <td>{{ election.can1 }} </td>
+      <td>{{ election.can2 }} </td>
+      <td>{{ election.can3 }} </td>
+      <td>{{ election.can4 }} </td>
+      <td>{{ election.winner }} </td>
+      <td class="text-danger">{{ election.close }} </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <br />
+
+
+{% endblock %}

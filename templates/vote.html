@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <link rel="stylesheet" href="/static/style.css">
+{% endblock %}
+
+{% block body %}
+  <h1 class="mt-3 text-center"> Vote For Your Candidates</h1>
+<div class="container p-3 col-md-7 m-auto">
+
+  {% if errormessage != None %}
+    <p class="text-danger text-center bold">Hi {{errormessage}}</p>
+  {% endif %}
+    <div class="vote">
+      <form class="" action="" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.first_choice.label(
+          class = "form-label") }}
+        {{ form.first_choice(
+          class = "form-control") }}
+        <br>
+        {{ form.second_choice.label(
+          class = "form-label") }}
+        {{ form.second_choice(
+          class = "form-control") }}
+        <br>
+        {{ form.third_choice.label(
+          class = "form-label") }}
+        {{ form.third_choice(
+          class = "form-control") }}
+        <br>
+        {{ form.forth_choice.label(
+          class = "form-label") }}
+        {{ form.forth_choice(
+          class = "form-control") }}
+        <br>
+        <div class="text-center">
+          {{ form.submit(
+            class = "btn btn-outline-info") }}
+        </div>
+
+      </form>
+    </div>
+
+</div>
+
+{% endblock %}

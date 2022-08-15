@@ -1,0 +1,88 @@
+{% extends "adminLayout.html" %}
+
+{% block body %}
+  <h1 class="text-center"> Welcome to the Admin Portal </h1>
+  <button class="btn btn-danger mb-3" data-target="#NewElection" data-toggle="modal"><i class="fas fa-plus"> New Election</i> </button>
+  <div class="modal fade" id="NewElection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Are You Sure You Want To Start a New Election </h5>
+        <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form action="/clearElection" method="post">
+        <button class="btn btn-danger" type="submit"><i class="fas fa-plus"> New Election</i> </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-10 offset-1 p-2">
+  <form class="" action="" method="post">
+    {{ form.hidden_tag() }}
+
+    {{ form.electionName.label(
+      class = "form-label") }}
+    {{ form.electionName(
+      class = "form-control", value=electionName) }}
+    <br>
+
+    {{ form.candidate1.label(
+      class = "form-label") }}
+    {{ form.candidate1(
+      class = "form-control", value=candidate1) }}
+    <br>
+    {{ form.candidate1Party.label(
+      class = "form-label") }}
+    {{ form.candidate1Party(
+      class = "form-control", value=candidate1Party) }}
+    <br>
+    {{ form.candidate2.label(
+      class = "form-label") }}
+    {{ form.candidate2(
+      class = "form-control" , value=candidate2) }}
+    <br>
+    {{ form.candidate2Party.label(
+      class = "form-label") }}
+    {{ form.candidate2Party(
+      class = "form-control", value=candidate2Party) }}
+    <br>
+    {{ form.candidate3.label(
+      class = "form-label") }}
+    {{ form.candidate3(
+      class = "form-control" , value=candidate3) }}
+    <br>
+    {{ form.candidate3Party.label(
+      class = "form-label") }}
+    {{ form.candidate3Party(
+      class = "form-control", value=candidate3Party) }}
+    <br>
+    {{ form.candidate4.label(
+      class = "form-label") }}
+    {{ form.candidate4(
+      class = "form-control" , value=candidate4) }}
+    <br>
+    {{ form.candidate4Party.label(
+      class = "form-label") }}
+    {{ form.candidate4Party(
+      class = "form-control", value=candidate4Party) }}
+    <br>
+
+    <div class="text-center">
+
+      {{ form.submit(
+        class = "btn btn-secondary") }}
+
+    </div>
+
+  </form>
+</div>
+
+
+{% endblock %}

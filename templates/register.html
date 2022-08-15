@@ -1,0 +1,58 @@
+{% extends "loginRegisterlayout.html" %}
+
+{% block header %}
+  <!-- <link rel="stylesheet" href="/static/style.css"> -->
+
+{% endblock %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-8 mt-2">
+    <img src="{{ url_for('static', filename='images/login.jpg') }}" height="645vh;" width="100%;"  />
+
+  </div>
+  <div class="col-md-4 mt-5 pt-5 p-2" text-center>
+    <h2 class="text-center text-secondary"> REGISTER AS A NEW USER</h1>
+
+    <div class="reg">
+      <form class="" action="" method="post">
+        {{ form.hidden_tag() }}
+
+      <div class="form-group">
+        {{ form.name.label(
+          class = "form-label") }}
+        {{ form.name(
+          class = "form-control") }}
+      </div>
+
+        <div class="form-group">
+          {{ form.username.label(
+            class = "form-label") }}
+          {{ form.username(
+            class = "form-control") }}
+        </div>
+
+        <div class="form-group">
+        {{ form.password.label(
+          class = "form-label") }}
+        {{ form.password(
+          class = "form-control") }}
+        </div>
+
+        <br />
+        <div class="text-center">
+          {{ form.submit(
+            class = "btn btn-secondary") }}
+        </div>
+
+      </form>
+      <br />
+      <h5 class="text-center">
+         Already a Member? <a class="" href="/login">Login</a>
+      </h5>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
